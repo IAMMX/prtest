@@ -1,26 +1,41 @@
-  - type: input
-    id: version
-    attributes:
-      label: LVGL version
-      description: See in `lvgl.h` or use `git describe`
-      placeholder: e.g. v9.0.0
-    validations:
-      required: true
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-    validations:
-      required: true
-  - type: textarea
-    id: code-snippet
-    attributes:
-      label: How to reproduce?
-      description: If applicable add a code snippet to reproduce the issue
-      placeholder: |
-        ```c
-         your code here
-        ```  
-    validations:
-      required: false
+---  
+name: PR 模板  
+about: 描述您的 PR 的内容和目的  
+  
+title: "[PR 类型] - [简短描述]"  
+labels:  
+  - 待审查  
+assignees:  
+  - 审查者用户名  
+  
+body:  
+  - type: markdown  
+    attributes:  
+      value: |  
+        请按照以下格式填写 PR 信息：  
+  - type: textarea  
+    id: pr-description  
+    attributes:  
+      label: PR 描述  
+      description: 请详细描述此次 PR 的内容和目的。  
+      placeholder: 描述您的更改和它们如何影响项目...  
+  - type: dropdown  
+    id: pr-type  
+    attributes:  
+      label: PR 类型  
+      options:  
+        - 功能  
+        - 修复  
+        - 重构  
+        - 文档  
+        - 其他  
+  - type: checkboxes  
+    id: checklist  
+    attributes:  
+      label: 检查清单  
+      options:  
+        - label: 我已经测试了我的更改  
+        - label: 我已经更新了相关的文档（如果有）  
+        - label: 我已经检查了代码风格并遵循了项目的约定  
+  
+---
